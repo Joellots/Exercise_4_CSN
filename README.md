@@ -5,7 +5,7 @@
 ## Exercise:
   Producer-Consumer System with JSON Serialization/Deserialization.
   
-##Task: 
+## Task: 
   Create a producer-consumer system with two producers and one consumer. The producers will generate data, serialize it to JSON, and place it in a shared queue. The consumer will retrieve items from the queue, deserialize them from JSON, and process
 them
 
