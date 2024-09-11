@@ -11,17 +11,17 @@ them
 
 ## Code Snippets:
 
-  Importing necessary libraries, Producer Function:
+  ### Importing necessary libraries, Producer Function:
   The system starts by importing essential libraries: threading, queue, json, random, and time. The queue.Queue creates a thread-safe shared queue for data exchange between producers and consumers. The producer function generates random data, serializes it to JSON, and places it in the queue. To avoid indefinite blocking, it uses a timeout and regularly checks a stop_flag to determine if it should stop. The picture 1 show the source code of the Producer Function
   ![image](https://github.com/user-attachments/assets/f8e6f411-58e8-4205-8297-8985f4339771)
   Picture 1 - Producer Function
 
-  Consumer Function:
+  ### Consumer Function:
   The consumer function retrieves items from the queue with a timeout to allow periodic checking of the stop_flag. It deserializes the JSON data and processes it, here by printing it. The function continues to operate until the stop flag is set and the queue is empty. Below is the code snippet of the Consumer Function (pic. 2)
   ![image](https://github.com/user-attachments/assets/a20dd8cc-31f9-48ad-80ac-c308cfef7588)
   Picture 2 - Consumer Function
 
-  Main Program:
+  ### Main Program:
   The main program starts two producer threads and one consumer thread, all set as daemon threads to ensure they terminate with the main program. It keeps the program running with an infinite loop and catches KeyboardInterrupt to set the stop_flag, signaling threads to stop. After the interrupt, it waits for threads to finish, ensuring a clean shutdown. See picture 3.
   ![image](https://github.com/user-attachments/assets/cc4de1a5-9d7d-4a08-acb2-56da61f18f07)
   Picture 3 - Main Program
